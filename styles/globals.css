@@ -1,16 +1,43 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+
+@font-face {
+	font-family: 'Montserrat';
+	font-weight: 400;
+	src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-weight: 400;
+	src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@tailwind utilities;
+
+@layer components {
+	.radial-gradient {
+		background: radial-gradient(55% 180% at 5% 100%, rgba(186, 137, 100, 0.2) 0, rgba(10, 10, 10, 0) 75%, rgba(10, 10, 10, 0) 100%);
+	}
+
+	.overlay-gradient {
+		background: linear-gradient(200deg, rgba(10, 10, 10, 0) 50%, rgba(10, 10, 10, 0.4) 90%);
+	}
+
+	.footer {
+		background-size: cover;
+		background-color: #111111;
+		background-image: linear-gradient(31.67deg, rgba(1, 22, 26, 0.5) 20.03%, rgba(17, 17, 17, 0) 41.88%),
+			url('https://status.riotgames.com/static/media/riotFooter.c4bb7ec2.png');
+		background-repeat: no-repeat;
+		background-position: right top;
+	}
 }
 
-* {
-  box-sizing: border-box;
+::selection {
+	background: theme(colors.primary.DEFAULT);
+	color: white;
+}
+
+html {
+	scroll-behavior: smooth;
 }
