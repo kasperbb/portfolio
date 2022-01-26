@@ -57,7 +57,7 @@ export const FeaturedProject: FC<Project> = ({ name, url, image, video, type }) 
 					className="absolute bottom-0 left-0 z-40 h-1 transition-[width,height] ease-linear duration-[300ms,100ms] [animation-fill-mode:both] bg-primary group-hover:h-2"
 					style={{ width: `${videoTime}%` }}
 				></div>
-				<video className="z-0 object-cover w-full h-full" ref={vidRef} muted>
+				<video className="z-10 object-cover w-full h-full" ref={vidRef} muted>
 					<source src={video.url} type="video/mp4" />
 					Sorry, your browser doesn't support embedded videos.
 				</video>

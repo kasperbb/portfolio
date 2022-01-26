@@ -29,15 +29,11 @@ export async function getStaticProps() {
 }
 
 export default function Index({ projects, skills, contactInformation }: IndexProps) {
-	console.log(projects)
 	return (
 		<>
 			<HeroSection />
-
 			<ProjectsSection projects={projects} />
-
 			<LastSection skills={skills} contactInformation={contactInformation} />
-
 			<Footer />
 		</>
 	)
