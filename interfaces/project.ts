@@ -1,4 +1,5 @@
 import { Image } from './image'
+import { Video } from './video'
 
 export interface Project {
 	_id: string
@@ -7,4 +8,5 @@ export interface Project {
 	type: string | null
 	featured: boolean | null
 	image: Image
+	video?: Video
 }

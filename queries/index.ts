@@ -13,6 +13,9 @@ export const productsQuery = `
                     dominant
                 }
             }
+        },
+        "video": video.asset-> {
+            url
         }
     }
 `
