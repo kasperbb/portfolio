@@ -28,12 +28,6 @@ export const Video: FC<VideoProps> = ({ title, subtitle, videoUrl }) => {
 	}
 
 	useEffect(() => {
-		if (vidRef.current) {
-			vidRef.current.ontimeupdate = () => updateVideoTime()
-		}
-	}, [vidRef?.current])
-
-	useEffect(() => {
 		if (videoTime === 100) setPlaying(false)
 	}, [videoTime])
 
@@ -61,7 +55,7 @@ export const Video: FC<VideoProps> = ({ title, subtitle, videoUrl }) => {
 				className="absolute bottom-0 left-0 z-40 h-1 transition-[width,height] ease-linear duration-[300ms,100ms] [animation-fill-mode:both] bg-primary group-hover:h-2"
 				style={{ width: `${videoTime}%` }}
 			></div>
-			<video className="z-10 object-cover w-full h-full" ref={vidRef} muted>
+			<video className="z-10 object-cover w-full h-full" ref={vidRef} onTimeUpdate={updateVideoTime} muted>
 				<source src={videoUrl} type="video/mp4" />
 				Sorry, your browser doesn't support embedded videos.
 			</video>
