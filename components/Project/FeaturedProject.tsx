@@ -4,7 +4,7 @@ import { Video } from '@components/Video/Video'
 
 export const FeaturedProject: FC<Project> = ({ name, url, image, video, type }) => {
 	if (video) {
-		return <Video title={name} subtitle={type} videoUrl={video.url} />
+		return <Video title={name} subtitle={type} videoUrl={video.url} projectUrl={url} />
 	}
 
 	return (

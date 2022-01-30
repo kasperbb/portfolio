@@ -5,9 +5,10 @@ interface VideoProps {
 	title: string
 	subtitle?: string | null
 	videoUrl: string
+	projectUrl: string
 }
 
-export const Video: FC<VideoProps> = ({ title, subtitle, videoUrl }) => {
+export const Video: FC<VideoProps> = ({ title, subtitle, videoUrl, projectUrl }) => {
 	const vidRef = useRef<HTMLVideoElement>(null)
 	const [playing, setPlaying] = useState(false)
 	const [videoTime, setVideoTime] = useState(0)
@@ -46,7 +47,9 @@ export const Video: FC<VideoProps> = ({ title, subtitle, videoUrl }) => {
 					)}
 				</div>
 				<div className="absolute bottom-0 left-0 z-20 p-6">
-					<h3 className="mb-1 text-4xl font-bold leading-tight text-white">{title}</h3>
+					<a href={projectUrl}>
+						<h3 className="mb-1 text-4xl font-bold leading-tight text-white">{title}</h3>
+					</a>
 					{subtitle && <h4 className="font-semibold text-gray-300 uppercase text-md">{subtitle}</h4>}
 				</div>
 				<div className="absolute inset-0 z-10 bg-black opacity-40"></div>
