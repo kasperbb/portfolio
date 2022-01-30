@@ -46,7 +46,7 @@ export const Video: FC<VideoProps> = ({ title, subtitle, videoUrl, projectUrl })
 						</button>
 					)}
 				</div>
-				<div className="absolute bottom-0 left-0 z-20 p-6">
+				<div className="absolute bottom-0 left-0 z-30 p-6">
 					<a href={projectUrl}>
 						<h3 className="mb-1 text-4xl font-bold leading-tight text-white">{title}</h3>
 					</a>
